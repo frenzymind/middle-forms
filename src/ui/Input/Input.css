@@ -50,3 +50,21 @@ label {
   font-size: 0.8rem;
   color: red;
 }
+
+.with-icon-wrapper {
+  position: relative;
+}
+
+.with-icon {
+  padding-left: 2rem;
+  width: 175px;
+}
+
+.icon {
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  color: #6c757d;
+  top: 30%;
+  left: 4%;
+}
