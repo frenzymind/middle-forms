@@ -2,6 +2,7 @@ import { FormEvent } from 'react'
 import './LoginSignPage.css'
 import { ILoginFormEvent, ISex, ISignFormResult, ISignUpFormEvent } from './types'
 import { Input } from '../../ui/Input/Input'
+import { faAt } from '@fortawesome/free-solid-svg-icons'
 
 type ILoginSignPageProps = {
   onSubmit: (formResult: ISignFormResult) => void
@@ -18,7 +19,6 @@ export function LoginSignPage({ onSubmit }: ILoginSignPageProps) {
 
   const submitSignUpForm = (event: FormEvent<ISignUpFormEvent>) => {
     event.preventDefault()
-    console.log(event)
 
     const formElements = event.currentTarget.elements
 
@@ -46,7 +46,7 @@ export function LoginSignPage({ onSubmit }: ILoginSignPageProps) {
 
             <Input name='userName' placeholder='Name' />
             <Input type='text' name='nickName' placeholder='Nick' />
-            <Input type='email' name='email' placeholder='Email' label='Почта' withAsterisk />
+            <Input type='email' name='email' placeholder='Email' label='Почта' withAsterisk icon={faAt} />
 
             <div className='radio-wrapper'>
               <div>
