@@ -1,17 +1,23 @@
 import './App.css'
-import { LoginSignPage } from './pages/LoginSignPage/LoginSignPage'
-import { ISignFormResult } from './pages/LoginSignPage/types'
+import { LoginPage } from './pages/LoginPage/LoginPage'
+import { SignupPage } from './pages/SignupPage/SignupPage'
+import { ILoginFormResult, ISignupFormResult } from './types'
 
 function App() {
-  const handleFormSubmit = (formResult: ISignFormResult) => {
-    if (formResult.action === 'login') {
-      console.log('Someone want to login', formResult)
-    } else {
-      console.log('Someone want to signup', formResult)
-    }
+  const handleSignupSubmit = (formResult: ISignupFormResult) => {
+    console.log('Someone want to signup', formResult)
   }
 
-  return <LoginSignPage onSubmit={handleFormSubmit} />
+  const handleLoginSubmit = (formResult: ILoginFormResult) => {
+    console.log('Someone want to signup', formResult)
+  }
+
+  return (
+    <>
+      <SignupPage onSubmit={handleSignupSubmit} />
+      <LoginPage onSubmit={handleLoginSubmit} />
+    </>
+  )
 }
 
 export default App

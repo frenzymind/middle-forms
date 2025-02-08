@@ -1,14 +1,13 @@
-export type ISignFormResult =
-  | { action: 'login'; email: string; password: string }
-  | {
-      action: 'signup'
-      name: string
-      nick: string
-      email: string
-      sex: ISex
-      password: string
-      passwordRepeat: string
-    }
+export type ISignupFormResult = {
+  name: string
+  nick: string
+  email: string
+  sex: ISex
+  password: string
+  passwordRepeat: string
+}
+
+export type ILoginFormResult = { email: string; password: string }
 
 interface ILoginFormElements extends HTMLFormControlsCollection {
   email: HTMLInputElement
