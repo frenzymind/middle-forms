@@ -15,8 +15,6 @@ label {
   display: flex;
   margin: 20px;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
 
 .error {
@@ -67,4 +65,12 @@ label {
   color: #6c757d;
   top: 30%;
   left: 4%;
+}
+
+.input-description {
+  font-size: 12px;
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  color: #fff;
 }

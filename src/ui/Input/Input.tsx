@@ -11,11 +11,13 @@ type IInputProps = {
   name?: string
   label?: string
   error?: string
+  description?: string
   withAsterisk?: boolean
   size?: IInputSize
   radius?: IInputRadius
   type?: React.HTMLInputTypeAttribute
   icon?: IconDefinition
+  disabled?: boolean
 }
 
 const SIZE: Record<IInputSize, string> = {
@@ -40,6 +42,8 @@ export function Input({
   type = 'text',
   withAsterisk = false,
   icon,
+  description,
+  disabled = false,
 }: IInputProps) {
   const inputClasses = classNames('input-element', {
     error: Boolean(error),
@@ -53,6 +57,7 @@ export function Input({
   return (
     <div className='input-wrapper '>
       {label && <label className={labelClasses}>{label}</label>}
+      {description && <p className='input-description'>{description}</p>}
       <div className='with-icon-wrapper'>
         {icon && <FontAwesomeIcon className='icon' icon={icon} />}
         <input
@@ -65,6 +70,7 @@ export function Input({
             borderRadius: RADIUS[radius],
           }}
           required={withAsterisk}
+          disabled={disabled}
         />
       </div>
       {error && <div className='error-text'>{error}</div>}
